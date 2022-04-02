@@ -1,0 +1,28 @@
+{
+  "root": "apps/angular-dynamic-theming-e2e",
+  "sourceRoot": "apps/angular-dynamic-theming-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/angular-dynamic-theming-e2e/cypress.json",
+        "devServerTarget": "angular-dynamic-theming:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "angular-dynamic-theming:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/angular-dynamic-theming-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["angular-dynamic-theming"]
+}

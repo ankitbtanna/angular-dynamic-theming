@@ -1,0 +1,94 @@
+{
+  "projectType": "application",
+  "root": "apps/angular-dynamic-theming",
+  "sourceRoot": "apps/angular-dynamic-theming/src",
+  "prefix": "angular-dynamic-theming",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/angular-dynamic-theming",
+        "index": "apps/angular-dynamic-theming/src/index.html",
+        "main": "apps/angular-dynamic-theming/src/main.ts",
+        "polyfills": "apps/angular-dynamic-theming/src/polyfills.ts",
+        "tsConfig": "apps/angular-dynamic-theming/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/angular-dynamic-theming/src/favicon.ico",
+          "apps/angular-dynamic-theming/src/assets"
+        ],
+        "styles": ["apps/angular-dynamic-theming/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/angular-dynamic-theming/src/environments/environment.ts",
+              "with": "apps/angular-dynamic-theming/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "angular-dynamic-theming:build:production"
+        },
+        "development": {
+          "browserTarget": "angular-dynamic-theming:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "angular-dynamic-theming:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/angular-dynamic-theming/src/**/*.ts",
+          "apps/angular-dynamic-theming/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/angular-dynamic-theming"],
+      "options": {
+        "jestConfig": "apps/angular-dynamic-theming/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

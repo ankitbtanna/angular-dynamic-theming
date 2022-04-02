@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "angular-dynamic-theming": "apps/angular-dynamic-theming",
+    "angular-dynamic-theming-e2e": "apps/angular-dynamic-theming-e2e"
+  }
+}
