@@ -1,0 +1,12 @@
+h1 {
+    color: var(--primaryFontColor);
+    font-size: var(--fontSize);
+}
+
+:host {
+    background-color: var(--primaryHeaderColor);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex: 1;
+}
