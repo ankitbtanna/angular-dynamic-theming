@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   primaryFontColorChanged(val: any) {
     console.log(val);
     this.parentStyle['--primaryFontColor'] = val.target.value;
-    this.parentStyle = {...this.parentStyle };
+    this.parentStyle = { ...this.parentStyle };
   }
 
   primaryHeaderColorChanged(val: any) {
@@ -35,6 +35,16 @@ export class AppComponent implements OnInit {
 
   primaryFontSizeChanged(val: any) {
     this.parentStyle['--fontSize'] = val.target.value + 'px';
+    this.parentStyle = { ...this.parentStyle };
+  }
+
+  primaryFontStyleChanged(val: any) {
+    this.parentStyle['--primaryFontStyle'] = val.target.value;
+    this.parentStyle = { ...this.parentStyle };
+  }
+
+  primaryFontWeightChanged(val: any) {
+    this.parentStyle['--primaryFontWeight'] = val.target.value;
     this.parentStyle = { ...this.parentStyle };
   }
 }

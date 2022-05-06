@@ -1,6 +1,8 @@
 h1 {
     color: var(--primaryFontColor);
     font-size: var(--fontSize);
+    font-weight: var(--primaryFontWeight);
+    font-style: var(--primaryFontStyle);
 }
 
 :host {
